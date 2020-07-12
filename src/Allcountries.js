@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,26 +41,44 @@ console.log(globalData)
   return (
     <div className={classes.root}>
       <table>
-        {globalData.map(data => {
+      <td>
+      <tr>Country Name</tr></td>
+     <td> <tr>Total Cases</tr></td>
+     <td><tr>Active Cases</tr></td>
+         {globalData.map((key,ind)=>{
           return(
-            <tr>
-            <td>
-            {data.title}
-              </td>
-            <td><h3 className = {classes.title}>
-            
-           { // {key.replace(/_/g,'') } 
-          }
-          {data.title }+Hello
-                     </h3>
-          </td>
-            <td> 
-           { // <h3>{globalData[0][key]}</h3>
-        }
-            </td>
-            </tr> 
+            <tr><td>{globalData[ind].title}</td>
+            <td>{globalData[ind].total_cases}</td>
+            <td>{globalData[ind].total_active_cases}</td>
+            </tr>
           )
-        })}
+        })
+        
+        
+        
+        
+        
+        // (data => {
+        // //   return(
+        // //     <tr>
+        // //     <td>
+        // //     {data.title}
+        // //       </td>
+        // //     <td><h3 className = {classes.title}>
+            
+        // //    { // {key.replace(/_/g,'') } 
+        // //   }
+        // //   {data.title }+Hello
+        // //              </h3>
+        // //   </td>
+        // //     <td> 
+        // //    { // <h3>{globalData[0][key]}</h3>
+        // // }
+        // //     </td>
+        // //     </tr> 
+        // //   )
+        }
+  
        </table>
       
     </div>
